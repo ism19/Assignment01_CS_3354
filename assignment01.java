@@ -7,5 +7,19 @@ public class assignment01 {
         int[] itemStocks = new int[10];
     }
 
-    
+    public static void printInventory(String[] names, double[] prices, int[] stocks) {
+        for (int i = 0; i < 10; i++) {
+            if(names[i] != null) System.out.println("Item: " + names[i] + ", Price: " + prices[i] + ", Stock: " + stocks[i]);
+        }
+    }
+
+    public static void restockItem(String[] names, int[] stocks, String target, int amount) {
+        for (int i = 0; i < 10; i++) {
+            if(names[i] == target) {
+                stocks[i] += amount;
+                return;
+            }
+        }
+        System.out.println("Item not found.");
+    }
 }
